@@ -1,0 +1,19 @@
+import javax.swing.SwingUtilities;
+
+/**
+ * Calculator Application Main Class
+ */
+public class CalculatorApp {
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                CalculatorModel model = new CalculatorModel();
+                CalculatorView view = new CalculatorView();
+                CalculatorController controller = new CalculatorController(model, view);
+                view.setVisible(true);
+            }
+        });
+    }
+}
